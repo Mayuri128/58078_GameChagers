@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DroneToy</title>
+    <link rel="stylesheet" href="DroneToy.css">
+</head>
+
+<body>
+
+    <canvas id="canvas" class="fadein" width="600" height="600"></canvas>
+    <div class="option_container">
+        <div>
+            <button class="pointer" onclick="place()">PLACE</button>
+            <span style="color:black"> X :</span><input id="xposition" type="number" max="400" min="0" name="X" value="100">
+            <span style="color:black"> Y :</span> <input id="yposition" type="number" max="400" min="0" name="Y" value="100">
+            <div class="form-group" id="radiogrp" onclick="radiogrpfunction()">
+                <input type="radio" id="north" class="side" name="pos" value="north">
+                <label for="north">North</label>
+
+                <input type="radio" id="south" class="side" name="pos" value="south">
+                <label for="south">South</label>
+
+                <input type="radio" id="east" class="side" name="pos" value="east">
+                <label for="east">East</label>
+
+                <input type="radio" id="west" class="side" name="pos" value="west">
+                <label for="west">West</label>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <button id="MoveClick" class="pointer" onclick="Move()" disabled>  Move </button>
+            <button id="leftCLick" class="pointer" onclick="leftKeyCLick()" disabled> Left </button>
+            <button id="attack" class="pointer" onclick="attack()" disabled> Attack </button>
+            <button id="rightCLick" class="pointer" onclick="rightKeyCLick()" disabled> Right </button>
+        </div>
+        <div>
+            <button id="report" class="pointer" onclick="showReport()" disabled>REPORT</button>
+
+
+            <span class="report_data"> X-Pos :      </span><span id="xPos" class="report_data"></span>
+            <span class="report_data"> Y-Pos :      </span><span id="yPos" class="report_data"></span>
+            <span class="report_data"> Drone Face : </span><span id="droneFace" class="report_data"></span>
+
+        </div>
+    </div>
+    <script src="DroneToy.js"></script>
+</body>
+
+</html>
